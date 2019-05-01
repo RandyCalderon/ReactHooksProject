@@ -4,8 +4,22 @@ const MenuItemGroup = Menu.ItemGroup;
 
 // Strings only for navbar}
 
+// NavBar Responsive contents and styling
+const NavRightMenu: React.FC = () => {
+  return (
+    <Menu mode="horizontal">
+      <Menu.Item key="home">
+        <a href="profile">Signin</a>
+      </Menu.Item>
+      <Menu.Item key="signup">
+        <a href="">Signup</a>
+      </Menu.Item>
+    </Menu>
+  );
+};
+
 // Navbar contents and styling
-const NavItems: React.FC = () => {
+const NavLeftMenu: React.FC = () => {
   return (
     <Menu mode="horizontal">
       <Menu.Item key="home">
@@ -26,7 +40,12 @@ const NavItems: React.FC = () => {
 
 // Navbar mapping items plus main container styling
 const NavBar: React.FC = () => {
-  return <NavItems />;
+  return (
+    <React.Fragment>
+      <NavLeftMenu />
+      <NavRightMenu />
+    </React.Fragment>
+  );
 };
 
 export default NavBar;
