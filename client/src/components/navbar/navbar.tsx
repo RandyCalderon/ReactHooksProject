@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'antd';
 import { Drawer, Button } from 'antd';
 import nav from './navbar.module.scss';
+import { nfcall } from 'q';
 
 // Strings only for navbar}
 
@@ -41,6 +42,7 @@ const NavLeftMenu: React.FC = () => {
 
 // Navbar mapping items plus main container styling
 const NavBar: React.FC = () => {
+  const [visible, setVisible] = useState<boolean>(false);
   return (
     <React.Fragment>
       <nav className={nav.menuBar}>
@@ -54,12 +56,31 @@ const NavBar: React.FC = () => {
           <div className={nav.rightMenu}>
             <NavRightMenu />
           </div>
-          <Button className={nav.barsMenu} type="primary">
+          <Button
+            onClick={() => setVisible(true)}
+            className={nav.barsMenu}
+            type="primary"
+          >
             <span className={nav.barsBtn} />
           </Button>
-          <Drawer title="Basic Drawer" placement="right" closable={false}>
-            <NavLeftMenu />
-            <NavRightMenu />
+          <Drawer
+            onClose={() => setVisible(false)}
+            visible={visible}
+            placement="right"
+            closable={false}
+          >
+            <div className={nav.login}>
+              <div className={nav.items}>
+                <a>Login</a>
+                <a> Register</a>
+              </div>
+            </div>
+            <nav className={nav.drawerflex}>
+              <a>Home</a>
+              <a>About</a>
+              <a>FAQ</a>
+              <a>Contact Us</a>
+            </nav>
           </Drawer>
         </div>
       </nav>

@@ -51,8 +51,29 @@
   line-height: 70px;
 }
 
+// Styling button for responsive drawer
 .height {
   line-height: 70px;
+}
+
+// Drawer content
+.drawerflex {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 28px;
+  text-align: center;
+}
+
+// Styling for login container responsive
+.login {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.items {
+  padding: 5px;
 }
 
 .barsMenu {
@@ -90,6 +111,7 @@
 
 .ant-drawer-body {
   padding: 0;
+  display: flex;
 }
 
 .ant-drawer-body .ant-menu-horizontal>.ant-menu-item,
@@ -115,7 +137,7 @@
 
   .leftMenu,
   .rightMenu {
-    display: none;
+    display: none
   }
 
   .logo a {
