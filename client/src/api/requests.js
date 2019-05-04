@@ -1,5 +1,7 @@
-import axios from 'axios';
+import jikanjs from 'jikanjs';
 
-module.exports = {
-  fetchAnime() {},
+export default {
+  topAnime() {
+    return jikanjs.loadTop('anime', 1, 'airing');
+  },
 };
