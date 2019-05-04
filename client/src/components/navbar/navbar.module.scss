@@ -40,7 +40,7 @@
 }
 
 .menuCon .leftMenu {
-  float: left;
+  float: right;
 }
 
 .menuCon .rightMenu {
@@ -61,9 +61,9 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 30px;
+  padding: 20px;
   font-size: 28px;
-  text-align: center;
+  text-align: left;
 }
 
 // Styling for login container responsive
@@ -73,7 +73,7 @@
 }
 
 .items {
-  padding: 5px;
+  padding: 2px;
 }
 
 .barsMenu {

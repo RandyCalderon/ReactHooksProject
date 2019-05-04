@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
-import { Menu } from 'antd';
-import { Drawer, Button } from 'antd';
+import { Menu, Icon, Drawer, Button } from 'antd';
 import nav from './navbar.module.scss';
-import { nfcall } from 'q';
 
 // Strings only for navbar}
 
-// NavBar Responsive contents and styling
-const NavRightMenu: React.FC = () => {
-  return (
-    <Menu className={nav.height} mode="horizontal">
-      <Menu.Item key="home">
-        <a href="profile">Signin</a>
-      </Menu.Item>
-      <Menu.Item key="signup">
-        <a href="">Signup</a>
-      </Menu.Item>
-    </Menu>
-  );
-};
+// // NavBar Responsive contents and styling
+// const NavRightMenu: React.FC = () => {
+//   return (
+//     <Menu className={nav.height} mode="horizontal">
+//       <Menu.Item key="home">
+//         <a href="profile">Signin</a>
+//       </Menu.Item>
+//       <Menu.Item key="signup">
+//         <a href="">Signup</a>
+//       </Menu.Item>
+//     </Menu>
+//   );
+// };
 
 // Navbar contents and styling
 const NavLeftMenu: React.FC = () => {
@@ -53,9 +51,6 @@ const NavBar: React.FC = () => {
           <div className={nav.leftMenu}>
             <NavLeftMenu />
           </div>
-          <div className={nav.rightMenu}>
-            <NavRightMenu />
-          </div>
           <Button
             onClick={() => setVisible(true)}
             className={nav.barsMenu}
@@ -76,10 +71,22 @@ const NavBar: React.FC = () => {
               </div>
             </div>
             <nav className={nav.drawerflex}>
-              <a>Home</a>
-              <a>About</a>
-              <a>FAQ</a>
-              <a>Contact Us</a>
+              <a>
+                <Icon type="home" />
+                Home
+              </a>
+              <a>
+                <Icon type="info-circle" />
+                About
+              </a>
+              <a>
+                <Icon type="question-circle" />
+                FAQ
+              </a>
+              <a>
+                <Icon type="mail" />
+                Contact Us
+              </a>
             </nav>
           </Drawer>
         </div>
