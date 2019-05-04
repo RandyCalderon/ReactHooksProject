@@ -45,7 +45,7 @@ const NavBar: React.FC = () => {
     <React.Fragment>
       <nav className={nav.menuBar}>
         <div className={nav.logo}>
-          <a href="logo">Logo</a>
+          <a href="logo">Anifolio</a>
         </div>
         <div className={nav.menuCon}>
           <div className={nav.leftMenu}>
