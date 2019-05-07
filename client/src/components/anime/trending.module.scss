@@ -1,0 +1,27 @@
+// Styling for main container
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+// Styling for trending container
+.cardcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+// Styling for header of trending
+.header {
+  text-align: center;
+  font-size: 14px;
+  display: inline;
+  padding: 3px;
+  border-radius: 10px;
+  background: teal;
+  color: white;
+}
+
+.ant-card-meta-title {
+  color: red;
+}

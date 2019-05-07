@@ -1,13 +1,13 @@
 import React from 'react';
 import NavBar from './components/navbar/navbar';
-import Trending from './components/anime/trending';
 import './App.css';
+import Home from './pages/home';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <NavBar />
-      <Trending />
+      <Home />
     </div>
   );
 };
