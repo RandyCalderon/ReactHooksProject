@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from 'antd';
-import request from '../../api/requests';
+import request from '../../../api/requests';
 import trending from './trending.module.scss';
 
 const { Meta } = Card;
@@ -20,12 +20,12 @@ interface Data {
 
 const Trending: React.FC = () => {
   const [anime, setAnime] = useState<Data[]>([]);
-  // Look back at ways to improve fetching and not have it re-render too often
+  // Look back at ways to improve fetching and not have it re-render too often, is empty array appropriate
   useEffect(() => {
     let count = 1;
     request.topAnime(count).then((res: any) => {
       setAnime(res.top);
-      console.log(anime);
+      // console.log(anime);
     });
   }, [anime]);
 
@@ -37,6 +37,7 @@ const Trending: React.FC = () => {
           return (
             <Card
               hoverable
+              key={ind}
               style={{ width: 150, margin: 5 }}
               cover={
                 <img

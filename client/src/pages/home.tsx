@@ -1,11 +1,14 @@
 import React from 'react';
-import Trending from '../components/anime/trending';
+import Trending from '../components/anime/trending/trending';
+import Daychar from '../components/anime/daychar/daychar';
+import home from './home.module.scss';
 
 const Home: React.FC = () => {
   return (
-    <React.Fragment>
+    <div className={home.container}>
       <Trending />
-    </React.Fragment>
+      <Daychar />
+    </div>
   );
 };
 
