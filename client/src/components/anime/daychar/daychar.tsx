@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import request from '../../../api/requests';
 
 // Response Data Character Interface
 interface Data {}
@@ -6,7 +7,12 @@ interface Data {}
 const DayChar: React.FC = () => {
   const [character, setCharacter] = useState();
 
-  return <div>Love is Amazing and what happened to it</div>;
+  useEffect(() => {
+    request.randomCharacter().then((res: any) => {
+      console.log(res);
+    });
+  });
+  return <div>Amazing</div>;
 };
 
 export default DayChar;
