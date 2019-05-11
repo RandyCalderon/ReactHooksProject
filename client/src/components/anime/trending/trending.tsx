@@ -25,9 +25,8 @@ const Trending: React.FC = () => {
     let count = 1;
     request.topAnime(count).then((res: any) => {
       setAnime(res.top);
-      // console.log(anime);
     });
-  }, [anime]);
+  }, []);
 
   return (
     <div className={trending.container}>

@@ -1,7 +1,10 @@
-import React,
-  {
-  useState,
-  useEffect
+// Styling for character of the day or hour
+.header {
+  text-align: center;
+  font-size: 14px;
+  display: inline;
+  padding: 3px;
+  border-radius: 10px;
+  background: teal;
+  color: white;
 }
-
-from 'react';
