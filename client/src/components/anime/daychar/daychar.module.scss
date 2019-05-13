@@ -1,3 +1,9 @@
+// Styling for character container
+.container {
+  width: 100%;
+  max-width: 400px;
+}
+
 // Styling for character of the day or hour
 .header {
   text-align: center;
@@ -7,4 +13,13 @@
   border-radius: 10px;
   background: teal;
   color: white;
+}
+
+// Styling for image
+.charImg {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+  height: 200px;
+  width: 150px;
 }

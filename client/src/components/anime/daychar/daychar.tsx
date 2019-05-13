@@ -14,22 +14,40 @@ interface Data {
 }
 
 // Payload
-interface PayLoad {
-  data: Data[];
-}
 
 const DayChar: React.FC = () => {
-  const [character, setCharacter] = useState<PayLoad>([]);
+  const [character, setCharacter] = useState<Data[]>([]);
 
   useEffect(() => {
     request.randomCharacter().then((res: any) => {
-      setCharacter(res);
+      setCharacter([
+        {
+          about: res.about,
+          animeography: res.animeography,
+          image_url: res.image_url,
+          mangaography: res.mangaography,
+          name: res.name,
+          name_kanji: res.name_kanji,
+          voice_actors: res.voice_actors,
+        },
+      ]);
     });
   }, []);
 
   return (
-    <div>
+    <div className={daychar.container}>
       <h2 className={daychar.header}>Character of the Day</h2>
+      {character.map(data => {
+        return (
+          <div className={daychar.charContainer}>
+            <img
+              className={daychar.charImg}
+              src={data.image_url}
+              alt={`Picture of the anime character ${data.name}`}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 };
