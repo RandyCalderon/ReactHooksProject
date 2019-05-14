@@ -2,6 +2,7 @@
 .container {
   width: 100%;
   max-width: 400px;
+  position: relative;
 }
 
 // Styling for character of the day or hour
@@ -20,6 +21,24 @@
   border: 1px solid black;
   border-radius: 10px;
   margin-top: 10px;
-  height: 200px;
-  width: 150px;
+  height: 220px;
+  width: 180px;
+  position: absolute;
+  left: 110px;
+  top: 20px;
+}
+
+.charspan {
+  z-index: 1;
+  color: white;
+  background: black;
+  padding: 2px;
+  border-radius: 2px;
+  position: absolute;
+  top: 220px;
+  right: 185px;
+}
+
+.charContainer {
+  width: auto;
 }
