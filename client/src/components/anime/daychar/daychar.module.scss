@@ -21,24 +21,40 @@
   border: 1px solid black;
   border-radius: 10px;
   margin-top: 10px;
-  height: 220px;
-  width: 180px;
+  height: auto;
+  width: auto;
+  max-height: 180px;
+  max-width: 180px;
   position: absolute;
-  left: 110px;
+  left: 140px;
   top: 20px;
 }
 
-.charspan {
-  z-index: 1;
+// Styling for name of character
+.chartitle {
+  z-index: 100;
   color: white;
-  background: black;
-  padding: 2px;
-  border-radius: 2px;
   position: absolute;
-  top: 220px;
-  right: 185px;
+  background: black;
+  top: 160px;
+  font-size: 14px;
+  left: 145px;
+  border-radius: 5px;
+  padding: 2px;
+  width: max-content;
 }
 
-.charContainer {
-  width: auto;
+// Styling for character container to help with absolute positioning
+.titlecontainer {
+  position: absolute;
+  text-align: left;
+}
+
+// Styling for icon for extra character info
+.icon {
+  position: absolute;
+  top: 12px;
+  left: 270px;
+  opacity: 0.8;
+  color: black;
 }

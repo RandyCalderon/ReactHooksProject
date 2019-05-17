@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Icon } from 'antd';
 import request from '../../../api/requests';
 import daychar from './daychar.module.scss';
 
@@ -17,6 +18,7 @@ interface Data {
 
 const DayChar: React.FC = () => {
   const [character, setCharacter] = useState<Data[]>([]);
+  const [loaded, setLoaded] = useState<Boolean>(false);
 
   // Look into refetch issue and handling issues with randomCharacter request or find other api to query from to prevent issues
   useEffect(() => {
@@ -51,13 +53,19 @@ const DayChar: React.FC = () => {
         return (
           <React.Fragment>
             <img
-              height="220"
-              width="180"
               className={daychar.charImg}
               src={data.image_url}
               alt={`Picture of the anime character ${data.name}`}
             />
-            <span className={daychar.charspan}>{data.name}</span>
+            <div className={daychar.titlecontainer}>
+              <h3 className={daychar.chartitle}>{data.name}</h3>
+              <Icon
+                className={daychar.icon}
+                theme="twoTone"
+                twoToneColor="white"
+                type="info-circle"
+              />
+            </div>
           </React.Fragment>
         );
       })}
